@@ -1,0 +1,16 @@
+mainmenu "logger_module_filtering"
+
+source "$ZEPHYR_BASE/Kconfig.zephyr"
+
+config FOUNDRIES_IO_MOD_LOG_LEVEL
+	int "Logger verbosity level for example module"
+	range 0 4
+	default 0
+	help
+	  This value controls the verbosity level for the example
+	  Logger module in this application. The levels are:
+	  - 0: NONE, disable module's logs (default)
+	  - 1: ERR, only log errors
+	  - 2: WRN, log warnings and errors
+	  - 3: INF, log informational messages, warnings, and errors
+	  - 4: DBG, enable all logs, even verbose debug messages
